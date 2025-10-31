@@ -1,0 +1,86 @@
+{
+  "name": "what-if-simulator",
+  "version": "1.0.0",
+  "description": "A storytelling simulator that converts simple inputs into structured, branching narratives",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm run install:frontend && npm run install:backend && npm run install:shared",
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && npm install", 
+    "install:shared": "cd shared && npm install",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:db": "cd database && docker-compose up -d",
+    "build": "npm run build:shared && npm run build:backend && npm run build:frontend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "build:shared": "cd shared && npm run build",
+    "test": "npm run test:shared && npm run test:backend && npm run test:frontend",
+    "test:unit": "npm run test:backend:unit && npm run test:frontend:unit",
+    "test:integration": "cd backend && npm run test:integration",
+    "test:e2e": "cd frontend && npm run test:e2e",
+    "test:frontend": "cd frontend && npm run test",
+    "test:frontend:unit": "cd frontend && npm run test:unit",
+    "test:backend": "cd backend && npm run test",
+    "test:backend:unit": "cd backend && npm run test:unit",
+    "test:shared": "cd shared && npm run test",
+    "db:setup": "cd database && ./scripts/setup.sh",
+    "db:migrate": "cd backend && npm run db:migrate",
+    "db:seed": "cd backend && npm run db:seed", 
+    "db:reset": "cd database && ./scripts/reset.sh",
+    "db:backup": "cd database && ./scripts/backup.sh",
+    "lint": "npm run lint:frontend && npm run lint:backend && npm run lint:shared",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:shared": "cd shared && npm run lint",
+    "format": "npm run format:frontend && npm run format:backend && npm run format:shared",
+    "format:frontend": "cd frontend && npm run format",
+    "format:backend": "cd backend && npm run format", 
+    "format:shared": "cd shared && npm run format",
+    "deploy:staging": "./scripts/deploy.sh staging",
+    "deploy:prod": "./scripts/deploy.sh production",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "setup": "./scripts/setup.sh"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
+  },
+  "workspaces": [
+    "frontend",
+    "backend", 
+    "shared"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/what-if-simulator.git"
+  },
+  "keywords": [
+    "storytelling",
+    "ai",
+    "narrative",
+    "branching",
+    "creative-writing",
+    "simulator",
+    "what-if"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
+}

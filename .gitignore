@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+frontend/.next/
+frontend/out/
+backend/dist/
+
+# Environment variables (IMPORTANT - Keep secrets safe!)
+*.env
+*.env.local
+*.env.production
+backend/.env
+frontend/.env.local
+frontend/.env.production.local
+
+# But keep the example files
+!*.env.example
+!supabase.env.example
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.temp
