@@ -18,7 +18,7 @@ A complete specification including app flow, data model, API design, and algorit
 - Enable branching graphs with minimum depth of 4 and branching factor of 2–4
 - Support dual-perspective synchronization for aligned scenes
 - Provide modular Simulator service (rule-based + optional ML augmentation)
-
+- 
 ### Success Metrics (Prototype)
 | Metric | Target |
 |--------|--------|
